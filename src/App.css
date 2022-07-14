@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,213 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* header{
+  background-color:darkgrey;
+  height: 10vh;
+  text-shadow: 0px 10px 50px black;
 }
+header h1{
+justify-content: center;
+text-align: center;
+color: tomato;
+} */
+
+
+/* footer{
+  background-color:darkgrey;
+  height: 10vh;
+  margin-top: 5px; */
+/* position:relative; */
+/* top:550px */
+/* } */
+
+/* img{
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid rgb(109, 212, 6);
+  box-shadow: 0px 10px 50px grey; 
+/* display: flex; */
+ /* width: 90%;
+margin: 10px ; */
+/* }   */
+/* img:hover{ */
+/* transform: scale(1.01);
+box-shadow: 0px 10px 50px beige; */
+
+/* } */
+/* .img-div{ */
+  /* min-width: 100px;
+max-width: 500px;
+display: inline-block;
+margin-top:20px;
+margin-left:600px */
+/* float:right */
+/* margin:100px */
+/* height: 100px; */
+/* } */
+/* form{
+ text-align: center;
+ color:chocolate;
+font-family:Arial, Helvetica, sans-serif;
+margin:2px
+} */
+
+/* form label{
+ 
+  letter-spacing: 1px;
+ padding-right: 5px;
+  } */
+  /* form input{
+ border-radius: 3px;
+ height: 25px;
+    } */
+  
+    /* form button{
+      border-radius: 5px;
+ height: 25px;
+ width:70px;
+ background-color:orangered;
+ color:white;
+cursor: pointer;
+         } */
+         /* form button:hover{ */
+   
+ /* background-color:coral; */
+/* transform: scale(1.07); */
+
+/* } */
+         /* h3{
+            justify-content: center;
+            text-align: center;
+            color: rgb(109, 212, 6);
+
+           } */
+/* 
+           .mapDetail {
+display: block;
+position: absolute;
+bottom: 350px; */
+
+           /* }
+           .mapDetail h2{ */
+            /* color: rgb(109, 212, 6); */
+/* text-indent: 10px;                   */
+/* word-spacing: 1px; */
+/* position: relative;
+
+} */
+*{
+  margin:0;
+  padding:0
+}
+header{
+  background-color:darkgrey;
+  height: 10vh;
+  text-shadow: 0px 10px 50px black;
+  
+}
+header h1{
+  justify-content: center;
+  text-align: center;
+  color: tomato;
+  }
+.flex-container{
+  margin:2rem;
+  display: flex;
+ flex-wrap: nowrap;
+
+ flex-direction:row
+}
+.form-container{
+  width: 400px;
+  min-width: 400px;
+
+  display: flex;
+margin: .5rem auto;
+}
+
+input[type="text"] {
+  width: 200PX;
+  height: 26px;
+  /* display: block; */
+  /* background:lightgreen; */
+  color:tomato; 
+  /* text-align:justiy;  */
+  font-size: 110%;
+}
+form label{
+  color:rgb(109, 212, 6); 
+  margin-right:10px;
+
+}
+
+
+.img-div{
+  min-width:10hw;
+  max-width:50hw
+
+
+}
+
+img{
+  /* position: relative; */
+  /* top:40px; */
+  /* left:100px; */
+  margin-left:100px;
+  min-width:80%;
+  max-width:35vw;
+  border-radius: 10px;;
+  cursor: pointer;
+  border: 1px solid rgb(109, 212, 6);
+  box-shadow: 0px 10px 50px grey; 
+}
+
+img:hover{ 
+ transform: scale(1.01);
+box-shadow: 0px 10px 50px beige;
+
+}
+
+.mapDetail {
+  height:540px;
+  background: url('https://vietshipping.us/wp-content/uploads/2017/07/transparent-map-640x360.png') ;
+  background-position: center;
+  background-attachment: fixed;
+ border-radius: 5px;
+  /* opacity: ; */
+  /* margin:10px; */
+  /* color: rgb(109, 212, 6); */
+  text-indent: 10px;                  
+  word-spacing: 2px;
+  white-space: wrap;
+              }
+
+              .mapDetail h4{
+                line-height: 2.8;
+               margin-top: 2rem;
+                text-align: center;
+                            }
+p{
+  margin-top: 4rem;
+  text-align: center;
+font-weight: bold;
+line-height: 1.8;
+}
+
+
+form button{
+height: 30px;
+margin:1px;
+background-color:tomato;
+color: aliceblue;
+border: 1px solid rgb(109, 212, 6);
+border-radius: 5px;
+cursor: pointer;
+}
+form button:hover{
+background-color: rgb(248, 117, 94);
+  }
