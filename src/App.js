@@ -14,9 +14,11 @@ super(props)
 map:false,
 searchQuery: '',
 APIData: [],
+server: [],
 noplace:''
     }
     console.log(this.state.APIData);
+    console.log(this.state.server);
   }
 
   
@@ -28,13 +30,23 @@ try{
   })
 let url =`https://eu1.locationiq.com/v1/search.php?key=pk.e61955fe34c8d6780e197c6a6aac13ea&q=${this.state.searchQuery}&format=json`
   let data =await axios.get(url)
-  console.log(data.data[0]);
+  // console.log(data.data[0]);
 
   
  await this.setState({
     APIData:data.data[0],
     map:true
   })
+
+
+let serverApi = `http://localhost:3002/weather?cityName=${this.state.searchQuery}`
+let serverData =await axios.get(serverApi)
+console.log(serverData.data);
+await this.setState({
+  server:serverData.data,
+})
+
+
 }catch(err){
   
 alert(err)
@@ -67,16 +79,26 @@ alert(err)
        <p><b style={{'color':'tomato'}}>City Name:</b> {this.state.APIData.display_name}.</p>
       <h4><b style={{'color':'tomato'}}>Latitude : </b>{this.state.APIData.lat}</h4>
       <h4><b style={{'color':'tomato'}}>Longitude :</b> {this.state.APIData.lon}</h4>
+      
+      {this.state.server.map(item=>{
+return(
+  <>
+<h4><b style={{'color':'tomato'}}>datetime : </b>{item.datetime}</h4>
+<h4><b style={{'color':'tomato'}}>description :</b> {item.description}</h4>
+  </>
+
+)
+
+      })}
+   
       <h1>{this.state.noplace}</h1>
      </div>
   }
-    
+
       {this.state.map &&  <div className='img-div'>
     
         <img src={`https://maps.locationiq.com/v3/staticmap?key=${key}&center=${this.state.APIData.lat},${this.state.APIData.lon}&zoom=10`}/>
         </div>
-     
-    
         }
 
 
