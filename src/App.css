@@ -136,10 +136,15 @@ bottom: 350px; */
 } */
 *{
   margin:0;
-  padding:0
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  background-color:black;
+  color: rgb(240, 241, 247); 
 }
 header{
-  background-color:darkgrey;
+  background-color:rgba(235, 184, 175, 0.29);
   height: 10vh;
   text-shadow: 0px 10px 50px black;
   
@@ -147,14 +152,15 @@ header{
 header h1{
   justify-content: center;
   text-align: center;
-  color: tomato;
+  color: rgb(92, 255, 71);
+  text-shadow: 2px 1px rgb(240, 240, 240);
   }
 .flex-container{
   margin:2rem;
   display: flex;
  flex-wrap: nowrap;
-
- flex-direction:row
+ flex-direction:row;
+border-bottom: 1px solid grey;
 }
 .form-container{
   width: 400px;
@@ -187,7 +193,7 @@ form label{
 
 }
 
-img{
+.Map-Img{
   /* position: relative; */
   /* top:40px; */
   /* left:100px; */
@@ -200,7 +206,7 @@ img{
   box-shadow: 0px 10px 50px grey; 
 }
 
-img:hover{ 
+.Map-Img:hover{ 
  transform: scale(1.01);
 box-shadow: 0px 10px 50px beige;
 
@@ -212,6 +218,8 @@ box-shadow: 0px 10px 50px beige;
   background-position: center;
   background-attachment: fixed;
  border-radius: 5px;
+ border: 1px solid grey;
+
   /* opacity: ; */
   /* margin:10px; */
   /* color: rgb(109, 212, 6); */
@@ -220,10 +228,11 @@ box-shadow: 0px 10px 50px beige;
   white-space: wrap;
               }
 
-              .mapDetail h4{
-                line-height: 2.8;
+              .mapDetail h5{
+                line-height: 1.8;
                margin-top: 2rem;
-                text-align: center;
+               margin-left: 2rem;
+                /* text-align: center; */
                             }
 p{
   margin-top: 4rem;
@@ -234,14 +243,50 @@ line-height: 1.8;
 
 
 form button{
-height: 30px;
+height: 28px;
 margin:1px;
 background-color:tomato;
 color: aliceblue;
-border: 1px solid rgb(109, 212, 6);
+/* border: 1px solid rgb(109, 212, 6); */
 border-radius: 5px;
 cursor: pointer;
 }
 form button:hover{
 background-color: rgb(248, 117, 94);
   }
+
+
+
+  .Movies-Div{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+
+
+  }
+  .Movies-Card{
+    cursor: pointer;
+margin-top: 2rem;
+border-radius: 10px;
+/* background-color:lightslategray; */
+background-image: linear-gradient(to right, #484252, #b2b9b7);
+/* background-color: darkgreen; */
+/* width: 600px; */
+  }
+  .Movies-Card:hover{
+    background-image: linear-gradient(to right, #2d2a32, #dce4e2);
+
+  }
+  .Movies-Card img{
+   width: 100%;
+   border-radius: 10px;
+      }
+
+      footer{
+
+        background-color:rgba(235, 184, 175, 0.29);
+        height: 10vh;
+        text-shadow: 0px 10px 50px black;
+        text-align: center;
+      }

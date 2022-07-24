@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import {React,Component} from 'react';
 import axios from 'axios'
-// 
-// q: SEARCH_STRING
-// format: 'json'
-let key = 'pk.e61955fe34c8d6780e197c6a6aac13ea'
+import Movies from './components/movies'
+
+
+// import Card from 'react-bootstrap/Card';
+
 class App extends Component {
 
   constructor(props){
@@ -13,12 +13,16 @@ super(props)
     this.state={
 map:false,
 searchQuery: '',
-APIData: [],
-server: [],
+WeatherApi_Provider: [],
+WeatherArray_Server: [],
+moviesArray : [],
 noplace:''
     }
-    console.log(this.state.APIData);
-    console.log(this.state.server);
+    console.log(this.state.WeatherApi_Provider);
+    console.log(this.state.WeatherApi_Server);
+
+
+
   }
 
   
@@ -28,32 +32,57 @@ try{
  await this.setState({
     searchQuery:(e.target.cityName.value)
   })
-let url =`https://eu1.locationiq.com/v1/search.php?key=pk.e61955fe34c8d6780e197c6a6aac13ea&q=${this.state.searchQuery}&format=json`
-  let data =await axios.get(url)
-  // console.log(data.data[0]);
+///// return weather_Api data from the Api provider  ////
+let Weather_Provider_Url =`https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${this.state.searchQuery}&format=json`
+  let data =await axios.get(Weather_Provider_Url)
+  console.log(data.data[0]);
 
-  
+
  await this.setState({
-    APIData:data.data[0],
+  WeatherApi_Provider:data.data[0],
     map:true
   })
-
-
-let serverApi = `http://localhost:3002/weather?cityName=${this.state.searchQuery}`
-let serverData =await axios.get(serverApi)
+/////  return other Weather_Api data from server (server is the middleware)
+let Weather_Server_Url = `https://city-explorer-api-server.herokuapp.com/weather?cityName=${this.state.searchQuery}`
+let serverData =await axios.get(Weather_Server_Url)
 console.log(serverData.data);
 await this.setState({
-  server:serverData.data,
+  WeatherArray_Server:serverData.data,
 })
 
+/////  return other Movies_Api data from server (server is the middleware) ////////////////
 
-}catch(err){
+let Movies_Server_Url  = `https://city-explorer-api-server.herokuapp.com/movies?cityName=${this.state.searchQuery}`;
+let MoviesData =await axios.get(Movies_Server_Url)
+console.log(MoviesData.data);
+await this.setState({
+  moviesArray: MoviesData.data
+})
+
+}
+
+
+catch(err){
   
 alert(err)
   console.log(err)}
 
 
 }
+
+// GetMovies=async()=>{
+// try{
+
+// }
+
+// catch(err){
+//   alert(err)
+// }
+
+  // }
+
+
+
 
   render(){
 
@@ -76,15 +105,15 @@ alert(err)
    
       {this.state.map &&
      <div className='mapDetail'>
-       <p><b style={{'color':'tomato'}}>City Name:</b> {this.state.APIData.display_name}.</p>
-      <h4><b style={{'color':'tomato'}}>Latitude : </b>{this.state.APIData.lat}</h4>
-      <h4><b style={{'color':'tomato'}}>Longitude :</b> {this.state.APIData.lon}</h4>
+       <p><b style={{'color':'tomato'}}>City Name:</b> {this.state.WeatherApi_Provider.display_name}.</p>
+      <h5><b style={{'color':'tomato'}}>Latitude : </b>{this.state.WeatherApi_Provider.lat} , Longitude : {this.state.WeatherApi_Provider.lon}</h5>
+      {/* <h4><b style={{'color':'tomato'}}>Longitude :</b> {this.state.APIData.lon}</h4> */}
       
-      {this.state.server.map(item=>{
+      {this.state.WeatherArray_Server.map(item=>{
 return(
   <>
-<h4><b style={{'color':'tomato'}}>datetime : </b>{item.datetime}</h4>
-<h4><b style={{'color':'tomato'}}>description :</b> {item.description}</h4>
+<h5><b style={{'color':'tomato'}}>datetime : </b>{item.datetime} , <b style={{'color':'tomato'}}>description :</b> {item.description}</h5>
+{/* <h4><b style={{'color':'tomato'}}>description :</b> {item.description}</h4> */}
   </>
 
 )
@@ -97,17 +126,28 @@ return(
 
       {this.state.map &&  <div className='img-div'>
     
-        <img src={`https://maps.locationiq.com/v3/staticmap?key=${key}&center=${this.state.APIData.lat},${this.state.APIData.lon}&zoom=10`}/>
+        <img className='Map-Img' src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_WEATHER_API_KEY}&center=${this.state.WeatherApi_Provider.lat},${this.state.WeatherApi_Provider.lon}&zoom=10`}/>
         </div>
         }
 
 
 </div>
-   {/* {this.state.map &&
+
+
+  <div className='Movies-Div'>
+
+    {this.state.moviesArray.map(ele=>{
+return <Movies data={ele} key={ele.id}/>
+
+    })
+   
+  }
+  </div>
+  {this.state.map &&
   <footer>
   &copy;mamoun Bursi
   </footer>
-  } */}
+  }
       </>
     )
   }
