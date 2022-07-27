@@ -141,8 +141,12 @@ bottom: 350px; */
 }
 body{
   background-color:black;
-  color: rgb(240, 241, 247); 
+  color: white;
+  text-shadow: 1px 1px grey;
+  background: rgb(35, 35, 31);
+  background: linear-gradient(90deg, rgb(45, 46, 37) 0%, rgb(0, 0, 0) 100%, rgb(18, 28, 30) 100%);
 }
+
 header{
   background-color:rgba(235, 184, 175, 0.29);
   height: 10vh;
@@ -208,7 +212,7 @@ form label{
 
 .Map-Img:hover{ 
  transform: scale(1.01);
-box-shadow: 0px 10px 50px beige;
+box-shadow: 0px 5px 25px beige;
 
 }
 
@@ -228,8 +232,8 @@ box-shadow: 0px 10px 50px beige;
   white-space: wrap;
               }
 
-              .mapDetail h5{
-                line-height: 1.8;
+              .mapDetail h4{
+                line-height: 1.4;
                margin-top: 2rem;
                margin-left: 2rem;
                 /* text-align: center; */

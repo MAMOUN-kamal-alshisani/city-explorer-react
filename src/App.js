@@ -70,20 +70,6 @@ alert(err)
 
 }
 
-// GetMovies=async()=>{
-// try{
-
-// }
-
-// catch(err){
-//   alert(err)
-// }
-
-  // }
-
-
-
-
   render(){
 
     return(
@@ -105,14 +91,14 @@ alert(err)
    
       {this.state.map &&
      <div className='mapDetail'>
-       <p><b style={{'color':'tomato'}}>City Name:</b> {this.state.WeatherApi_Provider.display_name}.</p>
-      <h5><b style={{'color':'tomato'}}>Latitude : </b>{this.state.WeatherApi_Provider.lat} , Longitude : {this.state.WeatherApi_Provider.lon}</h5>
+       <h4><b style={{'color':'tomato'}}>City Name:</b> {this.state.WeatherApi_Provider.display_name}.</h4>
+      <h4><b style={{'color':'tomato'}}>Latitude : </b>{this.state.WeatherApi_Provider.lat} , Longitude : {this.state.WeatherApi_Provider.lon}</h4>
       {/* <h4><b style={{'color':'tomato'}}>Longitude :</b> {this.state.APIData.lon}</h4> */}
       
       {this.state.WeatherArray_Server.map(item=>{
 return(
   <>
-<h5><b style={{'color':'tomato'}}>datetime : </b>{item.datetime} , <b style={{'color':'tomato'}}>description :</b> {item.description}</h5>
+<h4><b style={{'color':'tomato'}}>datetime : </b>{item.datetime} , <b style={{'color':'tomato'}}>description :</b> {item.description}</h4>
 {/* <h4><b style={{'color':'tomato'}}>description :</b> {item.description}</h4> */}
   </>
 

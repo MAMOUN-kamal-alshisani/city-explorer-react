@@ -24,15 +24,15 @@ class Movies extends Component{
            <Card style={{ width: '24rem' }} className='Movies-Card'>
       <Card.Img variant="top" src={this.props.data.image_url} alt={this.props.data.title} style={{textAlign:'center', maxHeight:'18rem',color:'grey'}}/>
       <Card.Body>
-        <Card.Title  style={{textAlign:'center', color:'rgb(109, 212, 6)' ,textShadow:'-1px 1px grey',margin:'1rem'}}>{this.props.data.title}</Card.Title>
-        <Card.Text style={{textAlign:'center', color:'tomato'}}>
-         release_date: {this.props.data.release_date} , popularity: {this.props.data.popularity}
+        <Card.Title  style={{textAlign:'center', color:'white' ,textShadow:'-1px 1px grey',margin:'1rem'}}><b style={{color:'tomato' , textShadow:'-1px 1px black'}}>Title:</b> {this.props.data.title}</Card.Title>
+        <Card.Text style={{textAlign:'center', color:'white' }}>
+        <b style={{color:'tomato', textShadow:'-1px 1px black'}}> Release_date: </b>{this.props.data.release_date} , <b style={{color:'tomato' , textShadow:'-1px 1px black'}}>Popularity: </b>{this.props.data.popularity}
         </Card.Text>
         <Card.Text>
-        average_votes: {this.props.data.average_votes} , total_votes: {this.props.data.total_votes}
+        <b style={{color:'tomato', textShadow:'-1px 1px black'}}>Average_votes: </b> {this.props.data.average_votes} , <b style={{color:'tomato' , textShadow:'-1px 1px black'}}> Total_votes: </b> {this.props.data.total_votes}
         </Card.Text>
         <Card.Text style={{textAlign:'center',color:'aliceblue'}}>
-          {this.props.data.overview}
+        <b  style={{color:'tomato' , textShadow:'-1px 1px black'}}>Description: </b> {this.props.data.overview}
         </Card.Text>
       </Card.Body>
     </Card>
