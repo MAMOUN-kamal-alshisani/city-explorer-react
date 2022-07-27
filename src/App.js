@@ -112,7 +112,7 @@ return(
 
       {this.state.map &&  <div className='img-div'>
     
-        <img className='Map-Img' src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_WEATHER_API_KEY}&center=${this.state.WeatherApi_Provider.lat},${this.state.WeatherApi_Provider.lon}&zoom=10`}/>
+        <img className='Map-Img' alt='Map-Img' src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_WEATHER_API_KEY}&center=${this.state.WeatherApi_Provider.lat},${this.state.WeatherApi_Provider.lon}&zoom=10` }/>
         </div>
         }
 
