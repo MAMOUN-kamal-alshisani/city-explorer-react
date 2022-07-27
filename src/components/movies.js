@@ -1,6 +1,6 @@
 // import Card from 'react-bootstrap/Card';
 import {React,Component} from 'react';
-import {Button, Card,Col ,Row, Container  } from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 class Movies extends Component{
